@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_get_started.xml" value="0.137" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_landing_page.xml" value="0.111" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
@@ -12,7 +13,7 @@
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_main.xml" value="0.1480978260869565" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_dashboard.xml" value="0.1480978260869565" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_home.xml" value="0.1480978260869565" />
-        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/landing_page.xml" value="0.2210144927536232" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/landing_page.xml" value="0.2" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_dashboard.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_home.xml" value="0.16197916666666667" />

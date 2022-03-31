@@ -12,6 +12,7 @@
         android:layout_width="400dp"
         android:layout_height="350dp"
         android:src="@drawable/landing_page_cats"
+        android:contentDescription="cat image"
         android:layout_gravity="center"
         />
 
@@ -19,11 +20,45 @@
         android:layout_width="400dp"
         android:layout_height="100dp"
         android:text="Get to know more about Cat"
-        android:textSize="45dp"
+        android:textSize="40dp"
         android:textStyle="bold"
         android:gravity="center"
+        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:textColor="@color/black"
+        android:fontFamily="@font/dmsans_bold"
         />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="We will provide informations about cats around the world and its nutritious foods"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/dmsans_regular"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        >
+        <Button
+            android:text="Get Started"
+            android:id="@+id/Button"
+            android:layout_width="310dp"
+            android:layout_height="53dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:textAllCaps="false"
+            android:background="@drawable/background_get_started"
+            android:fontFamily="@font/dmsans_bold"
+            android:textColor="@color/white"
+            
+            >
+        </Button>
+    </RelativeLayout>
 
 </LinearLayout>
