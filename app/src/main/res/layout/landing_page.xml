@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="We will provide informations about cats around the world and its nutritious foods"
+        android:text="We will provide informations about cats around the world and its' nutritious foods"
         android:layout_gravity="center"
         android:gravity="center"
         android:fontFamily="@font/dmsans_regular"
