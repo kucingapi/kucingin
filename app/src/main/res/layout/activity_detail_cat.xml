@@ -39,7 +39,7 @@
                app:layout_constraintTop_toBottomOf="@id/header_container"
                app:layout_constraintLeft_toLeftOf="parent"
                app:layout_constraintRight_toRightOf="parent"
-               android:layout_height="250dp"
+               android:layout_height="200dp"
                android:src="@drawable/british_short_hair"
     />
     <LinearLayout android:layout_width="match_parent"
@@ -115,11 +115,12 @@
         <TextView android:layout_width="wrap_content"
                   android:layout_marginVertical="20dp"
                   android:layout_height="wrap_content"
-                  android:text="      Kucing British Shorthair atau biasa disingkat menjadi kucing BHS adalah jenis kucing rumahan yang menggemaskan. Seperti namanya kucing ini berasal dari British atau Inggris, siapa yang mengira kucing rumahan ini dulunya digunakan untuk mengusir tikus yang suka mencuri hasil panen. "
+                  android:text="   The British Shorthair is the pedigreed version of the traditional British domestic cat, with a distinctively stocky body, dense coat, and broad face. The most familiar colour variant is the British Blue, with a solid grey-blue coat, orange eyes, and a medium-sized tail. The breed has also been developed in a wide range of other colours and patterns, including tabby and colourpoint."
                   android:textColor="@color/black"
                   android:fontFamily="@font/dmsans_regular"
         />
         <com.google.android.material.button.MaterialButton android:layout_width="match_parent"
+                                                           android:id="@+id/button_more_info"
                                                            android:backgroundTint="@color/secondary"
                                                            android:text="More info"
                                                            android:layout_height="60dp"

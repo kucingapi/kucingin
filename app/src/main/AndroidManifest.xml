@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Kucingin" >
         <activity
             android:name=".detail_cat"
-            android:exported="true" />
+            android:exported="true">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
