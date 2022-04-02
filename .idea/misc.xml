@@ -6,6 +6,7 @@
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_get_started.xml" value="0.137" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_landing_page.xml" value="0.111" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_username_input.xml" value="0.1285" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
@@ -13,6 +14,7 @@
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/icon_back.xml" value="0.1235" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_cat.xml" value="0.264" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_food.xml" value="0.264" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_userpage.xml" value="0.176" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_main.xml" value="0.1480978260869565" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_dashboard.xml" value="0.1480978260869565" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_home.xml" value="0.1480978260869565" />
