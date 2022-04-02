@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable-xxhdpi/detail_cat_categories_description.xml" value="0.178125" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable/detail_cat_categories.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable/detail_cat_description.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.178125" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable/ic_message.xml" value="0.7125" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable/icon_back.xml" value="0.17708333333333334" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_detail_cat.xml" value="0.22" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/detail_cat.xml" value="0.22" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_dashboard.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_home.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1765625" />
       </map>
     </option>
   </component>
