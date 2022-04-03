@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kucingin" >
         <activity
-            android:name=".detail_cat"
+            android:name=".DetailCat"
             android:exported="true">
         </activity>
         <activity

@@ -2,7 +2,6 @@ package com.example.kucingin;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import com.example.kucingin.databinding.ActivityDetailCatBinding;
 import com.google.android.material.button.MaterialButton;
 
-public class detail_cat extends AppCompatActivity {
+public class DetailCat extends AppCompatActivity {
     private ActivityDetailCatBinding binding;
     private MaterialButton moreInfo;
     private AppCompatImageButton backButton;
