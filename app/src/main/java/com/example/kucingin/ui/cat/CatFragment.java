@@ -4,19 +4,22 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.kucingin.CardAdapter;
 import com.example.kucingin.databinding.FragmentCatBinding;
 
 public class CatFragment extends Fragment {
 
     private CatViewModel dashboardViewModel;
     private FragmentCatBinding binding;
-
+    private RecyclerView popular;
+    private String[] dataset = {"test", "cat"};
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -31,6 +34,11 @@ public class CatFragment extends Fragment {
 
             }
         });
+        CardAdapter customAdapter = new CardAdapter(dataset);
+        popular = binding.popularRecycleView;
+        popular.setAdapter(customAdapter);
+        popular.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         return root;
     }
 
