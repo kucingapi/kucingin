@@ -18,24 +18,23 @@ public class CatFragment extends Fragment {
     private FragmentCatBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
+                             ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
                 new ViewModelProvider(this).get(CatViewModel.class);
 
-    binding = FragmentCatBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
+        binding = FragmentCatBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-                textView.setText(s);
+
             }
         });
         return root;
     }
 
-@Override
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
