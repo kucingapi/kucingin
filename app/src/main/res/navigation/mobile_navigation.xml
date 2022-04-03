@@ -7,19 +7,14 @@
 
     <fragment
         android:id="@+id/navigation_cat"
-        android:name="com.example.kucingin.ui.home.HomeFragment"
+        android:name="com.example.kucingin.ui.catFood.CatFoodFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_cat_food" />
 
     <fragment
         android:id="@+id/navigation_cat_food"
-        android:name="com.example.kucingin.ui.dashboard.DashboardFragment"
+        android:name="com.example.kucingin.ui.cat.CatFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_cat" />
 
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.kucingin.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
 </navigation>

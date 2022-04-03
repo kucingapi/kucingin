@@ -1,4 +1,4 @@
-package com.example.kucingin.ui.dashboard;
+package com.example.kucingin.ui.catFood;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,24 +10,23 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import com.example.kucingin.R;
-import com.example.kucingin.databinding.FragmentDashboardBinding;
+import com.example.kucingin.databinding.FragmentCatFoodBinding;
 
-public class DashboardFragment extends Fragment {
+public class CatFoodFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
-private FragmentDashboardBinding binding;
+    private CatFoodModel homeViewModel;
+    private FragmentCatFoodBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        homeViewModel =
+                new ViewModelProvider(this).get(CatFoodModel.class);
 
-    binding = FragmentDashboardBinding.inflate(inflater, container, false);
+    binding = FragmentCatFoodBinding.inflate(inflater, container, false);
     View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textHome;
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
