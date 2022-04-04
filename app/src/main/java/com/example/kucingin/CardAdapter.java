@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.kucingin.Dataset.CardType;
+import com.example.kucingin.databinding.CardItemBinding;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
@@ -17,18 +18,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
      * (custom ViewHolder).
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private final TextView textView;
-
-        public ViewHolder(View view) {
-            super(view);
+        private CardItemBinding cardItemBinding;
+        public ViewHolder(CardItemBinding cardItemBinding) {
+            super(cardItemBinding.getRoot());
             // Define click listener for the ViewHolder's View
 
-            textView = (TextView) view.findViewById(R.id.textView);
+            this.cardItemBinding = cardItemBinding;
         }
 
-        public TextView getTextView() {
-            return textView;
-        }
     }
 
     /**
@@ -45,8 +42,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         // Create a new view, which defines the UI of the list item
-        View view = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.card_item, viewGroup, false);
+        CardItemBinding view = CardItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()),
+                viewGroup, false);
 
         return new ViewHolder(view);
     }
@@ -57,7 +54,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.getTextView().setText(localDataSet[position].title);
+        CardType data = localDataSet[position];
+        String title = data.title;
+        TextView textView = viewHolder.cardItemBinding.textView;
+        textView.setText(title);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
