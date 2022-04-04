@@ -18,11 +18,9 @@ import com.example.kucingin.Dataset.CatDataset;
 import com.example.kucingin.Dataset.CatFoodDataSet;
 import com.example.kucingin.databinding.FragmentCatBinding;
 import com.example.kucingin.databinding.FragmentCatFoodBinding;
-import com.example.kucingin.ui.cat.CatViewModel;
 
 public class CatFoodFragment extends Fragment {
 
-    private CatViewModel dashboardViewModel;
     private FragmentCatFoodBinding binding;
     private RecyclerView popular;
     private CardType[] dataset;
