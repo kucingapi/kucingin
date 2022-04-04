@@ -15,7 +15,7 @@ public class DetailCat extends AppCompatActivity {
     private MaterialButton moreInfo;
     private AppCompatImageButton backButton;
     private ImageView shareButton;
-    private Intent sendIntent, browserIntent,shareIntent;
+    private Intent sendIntent, browserIntent, shareIntent, intent;
 
     private void createSendIntent(){
         sendIntent = new Intent();
@@ -32,8 +32,16 @@ public class DetailCat extends AppCompatActivity {
         browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://en.wikipedia.org/wiki/British_Shorthair"));
         createSendIntent();
         shareIntent = Intent.createChooser(sendIntent, null);
-
+        intent = getIntent();
         setContentView(binding.getRoot());
+
+        String title = intent.getStringExtra("title");
+        String description = intent.getStringExtra("description");
+        int image = intent.getIntExtra("image_id", 1);
+
+        binding.detailImage.setImageResource(image);
+        binding.detailTitle.setText(title);
+        binding.detailDescription.setText(description);
 
         moreInfo = binding.buttonMoreInfo;
         shareButton = binding.shareButton;
