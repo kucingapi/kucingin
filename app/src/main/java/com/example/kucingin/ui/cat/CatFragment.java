@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.kucingin.CardAdapter;
+import com.example.kucingin.Dataset.CardType;
+import com.example.kucingin.Dataset.CatDataset;
 import com.example.kucingin.databinding.FragmentCatBinding;
 
 public class CatFragment extends Fragment {
@@ -20,7 +22,7 @@ public class CatFragment extends Fragment {
     private CatViewModel dashboardViewModel;
     private FragmentCatBinding binding;
     private RecyclerView popular;
-    private String[] dataset = {"test", "cat"};
+    private CardType[] dataset;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -35,12 +37,18 @@ public class CatFragment extends Fragment {
 
             }
         });
+        initDataset();
         CardAdapter customAdapter = new CardAdapter(dataset);
         popular = binding.popularRecycleView;
         popular.setAdapter(customAdapter);
         popular.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         return root;
+    }
+
+    private void initDataset(){
+        CatDataset catDataset = new CatDataset();
+        dataset = catDataset.getCats();
     }
 
     @Override

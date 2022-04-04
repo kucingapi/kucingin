@@ -6,10 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.kucingin.Dataset.CardType;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
-    private String[] localDataSet;
+    private CardType[] localDataSet;
 
     /**
      * Provide a reference to the type of views that you are using
@@ -36,7 +37,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
      * @param dataSet String[] containing the data to populate views to be used
      * by RecyclerView.
      */
-    public CardAdapter(String[] dataSet) {
+    public CardAdapter(CardType[] dataSet) {
         localDataSet = dataSet;
     }
 
@@ -56,7 +57,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.getTextView().setText(localDataSet[position]);
+        viewHolder.getTextView().setText(localDataSet[position].title);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
