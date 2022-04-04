@@ -25,18 +25,10 @@ public class CatFragment extends Fragment {
     private CardType[] dataset;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(CatViewModel.class);
 
         binding = FragmentCatBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-
-            }
-        });
         initDataset();
         CardAdapter customAdapter = new CardAdapter(dataset);
         popular = binding.popularRecycleView;
