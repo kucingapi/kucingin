@@ -59,9 +59,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         ImageView cardImage = viewHolder.cardItemBinding.cardImage;
         TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
         TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
+        String description = data.description.substring(0, 100) + "...";
         cardImage.setImageResource(data.imageId);
         cardTitle.setText(data.title);
-        cardDescription.setText(data.description);
+        cardDescription.setText(description);
     }
 
     // Return the size of your dataset (invoked by the layout manager)
