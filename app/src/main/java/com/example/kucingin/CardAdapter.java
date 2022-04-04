@@ -1,6 +1,8 @@
 package com.example.kucingin;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +22,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
      */
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private CardItemBinding cardItemBinding;
+        private Context context;
         public ViewHolder(CardItemBinding cardItemBinding) {
             super(cardItemBinding.getRoot());
             // Define click listener for the ViewHolder's View
-
+            context = cardItemBinding.getRoot().getContext();
             this.cardItemBinding = cardItemBinding;
         }
 
@@ -52,17 +55,32 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         CardType data = localDataSet[position];
         ImageView cardImage = viewHolder.cardItemBinding.cardImage;
         TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
         TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
+        TextView cardMoreInfo = viewHolder.cardItemBinding.cardMoreInfo;
+
         String description = data.description.substring(0, 100) + "...";
         cardImage.setImageResource(data.imageId);
         cardTitle.setText(data.title);
         cardDescription.setText(description);
+        cardMoreInfo.setOnClickListener(moreInfoListener(data, viewHolder.context));
+    }
+
+    private View.OnClickListener moreInfoListener(CardType data, Context context){
+        Intent intent = new Intent(context, DetailCat.class);
+        intent.putExtra("title", data.title);
+        intent.putExtra("description", data.description);
+        intent.putExtra("image_id", data.imageId);
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(intent);
+            }
+        };
     }
 
     // Return the size of your dataset (invoked by the layout manager)
