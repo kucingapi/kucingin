@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_light"
+    tools:context=".ui.cat.CatFragment"
+    android:orientation="vertical"
+    android:padding="30dp"
+>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+    >
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hello, "
+                android:textSize="50dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_bold"
+                android:layout_marginBottom="5dp"
+        />
+        <TextView
+                android:id="@+id/username_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_regular"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+    >
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Popular"
+                android:textSize="25dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_bold"
+                android:layout_marginBottom="10dp"
+        />
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/popular_recycle_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="50dp"
+        />
+    </LinearLayout>
+</LinearLayout>
