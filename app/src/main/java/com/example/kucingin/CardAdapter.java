@@ -4,6 +4,7 @@ package com.example.kucingin;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.kucingin.Dataset.CardType;
@@ -55,9 +56,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         CardType data = localDataSet[position];
-        String title = data.title;
-        TextView textView = viewHolder.cardItemBinding.textView;
-        textView.setText(title);
+        ImageView cardImage = viewHolder.cardItemBinding.cardImage;
+        TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
+        TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
+        cardImage.setImageResource(data.imageId);
+        cardTitle.setText(data.title);
+        cardDescription.setText(data.description);
     }
 
     // Return the size of your dataset (invoked by the layout manager)

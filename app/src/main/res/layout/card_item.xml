@@ -3,61 +3,71 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
         app:cardBackgroundColor="@color/white"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         xmlns:android="http://schemas.android.com/apk/res/android"
 >
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="15dp"
-    >
-        <androidx.cardview.widget.CardView
+            android:layout_height="match_parent">
+        <LinearLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp"
         >
-            <ImageView
+            <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:scaleType="centerCrop"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/cat_angora"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+            >
+                <ImageView
+                        android:id="@+id/card_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/cat_angora"
+                />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                    android:id="@+id/card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:text="test"
+                    android:textSize="15dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/dmsans_bold"
             />
-        </androidx.cardview.widget.CardView>
-        <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:text="test"
-                android:textSize="15dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_bold"
-        />
-        <TextView
-                android:id="@+id/card_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="The Turkish Angora is a breed of domestic cat. Turkish Angoras are one of the ancient, natural breeds of cat..."
-                android:textSize="10dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_regular"
-        />
+            <TextView
+                    android:id="@+id/card_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="The Turkish Angora is a breed of domestic cat. Turkish Angoras are one of the ancient, natural breeds of cat..."
+                    android:textSize="10dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/dmsans_regular"
+            />
+        </LinearLayout>
         <TextView
                 android:id="@+id/card_more_info"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_margin="10dp"
                 android:text="@string/card_link"
                 android:textSize="10dp"
                 android:textAlignment="textEnd"
                 android:textColor="@color/secondary"
                 android:fontFamily="@font/dmsans_regular"
         />
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

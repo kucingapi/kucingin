@@ -47,6 +47,7 @@
                 android:textSize="25dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/dmsans_bold"
+                android:layout_marginBottom="10dp"
         />
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/popular_recycle_view"
