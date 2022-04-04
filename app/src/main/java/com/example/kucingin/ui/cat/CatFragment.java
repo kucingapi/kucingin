@@ -21,7 +21,6 @@ import com.example.kucingin.databinding.FragmentCatBinding;
 
 public class CatFragment extends Fragment {
 
-    private CatViewModel dashboardViewModel;
     private FragmentCatBinding binding;
     private RecyclerView popular;
     private CardType[] dataset;
