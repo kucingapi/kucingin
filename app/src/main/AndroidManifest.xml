@@ -10,6 +10,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Kucingin">
         <activity
+                android:name=".UserpageActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".LandingActivity"
                 android:exported="true">
             <intent-filter>
