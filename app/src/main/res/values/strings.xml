@@ -5,5 +5,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="cat">Cat\'s Info</string>
     <string name="cat_food">Cat\'s Foods</string>
-    <string name="card_link"><u>More info</u></string>
+    <string name="card_link">
+        <u>More info</u>
+    </string>
 </resources>
