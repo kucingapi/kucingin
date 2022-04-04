@@ -1,9 +1,11 @@
 package com.example.kucingin.ui.cat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -23,11 +25,17 @@ public class CatFragment extends Fragment {
     private FragmentCatBinding binding;
     private RecyclerView popular;
     private CardType[] dataset;
+    private Intent intent;
+    private TextView username;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentCatBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        username = binding.usernameTextview;
+
+        intent = getActivity().getIntent();
+        username.setText(intent.getStringExtra("username"));
 
         initDataset();
         CardAdapter customAdapter = new CardAdapter(dataset);
@@ -35,6 +43,7 @@ public class CatFragment extends Fragment {
         popular.setAdapter(customAdapter);
         popular.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
+        View root = binding.getRoot();
         return root;
     }
 
