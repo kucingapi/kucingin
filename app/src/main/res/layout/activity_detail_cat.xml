@@ -79,47 +79,140 @@
                 />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
-        <LinearLayout android:layout_width="wrap_content"
-                      android:layout_marginTop="20dp"
-                      android:layout_height="wrap_content">
-            <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
-                                                                   android:layout_height="wrap_content"
-                                                                   android:background="@drawable/detail_cat_categories"
-                                                                   android:paddingVertical="2dp"
-                                                                   android:textColor="@color/white"
-                                                                   android:paddingHorizontal="6dp"
-                                                                   android:text="Fur texture"
-                                                                   android:layout_marginRight="10dp"
-            />
-            <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
-                                                                   android:layout_height="wrap_content"
-                                                                   android:background="@drawable/detail_cat_categories_description"
-                                                                   android:paddingVertical="2dp"
-                                                                   android:textColor="@color/primary"
-                                                                   android:paddingHorizontal="6dp"
-                                                                   android:text="dense &amp; plush"
-            />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/cat"
+        >
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_marginTop="20dp"
+                          android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:background="@drawable/detail_cat_categories"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/white"
+                                                                       android:paddingHorizontal="6dp"
+                                                                       android:text="Fur texture"
+                                                                       android:layout_marginRight="10dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:background="@drawable/detail_cat_categories_description"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/primary"
+                                                                       android:paddingHorizontal="6dp"
+                                                                       android:text="dense &amp; plush"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_marginTop="10dp"
+                          android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:background="@drawable/detail_cat_categories"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/white"
+                                                                       android:paddingHorizontal="6dp"
+                                                                       android:text="Colours"
+                                                                       android:layout_marginRight="10dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:background="@drawable/detail_cat_categories_description"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/primary"
+                                                                       android:paddingHorizontal="6dp"
+                                                                       android:text="black, blue, white, red, cream, silver, golden"
+                />
+            </LinearLayout>
+
         </LinearLayout>
-        <LinearLayout android:layout_width="wrap_content"
-                      android:layout_marginTop="10dp"
-                      android:layout_height="wrap_content">
-            <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
-                                                                   android:layout_height="wrap_content"
-                                                                   android:background="@drawable/detail_cat_categories"
-                                                                   android:paddingVertical="2dp"
-                                                                   android:textColor="@color/white"
-                                                                   android:paddingHorizontal="6dp"
-                                                                   android:text="Colours"
-                                                                   android:layout_marginRight="10dp"
-            />
-            <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
-                                                                   android:layout_height="wrap_content"
-                                                                   android:background="@drawable/detail_cat_categories_description"
-                                                                   android:paddingVertical="2dp"
-                                                                   android:textColor="@color/primary"
-                                                                   android:paddingHorizontal="6dp"
-                                                                   android:text="black, blue, white, red, cream, silver, golden"
-            />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/cat_food"
+        >
+
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_marginTop="5dp"
+                          android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/black"
+                                                                       android:text="Price range: "
+                                                                       android:textSize="17dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/secondary"
+                                                                       android:text="Rp19.900"
+                                                                       android:textSize="17dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/black"
+                                                                       android:paddingHorizontal="6dp"
+                                                                       android:text="-"
+                                                                       android:textSize="17dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/secondary"
+                                                                       android:text="Rp1.460.000"
+                                                                       android:textSize="17dp"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_marginTop="5dp"
+                          android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/black"
+                                                                       android:text="Available for "
+                                                                       android:textStyle="bold"
+                                                                       android:textSize="13dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/primary"
+                                                                       android:text="kitten, adult, mature, "
+                                                                       android:textStyle="bold"
+                                                                       android:textSize="13dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/black"
+                                                                       android:text="and "
+                                                                       android:textStyle="bold"
+                                                                       android:textSize="13dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/primary"
+                                                                       android:text="senior "
+                                                                       android:textStyle="bold"
+                                                                       android:textSize="13dp"
+                />
+                <com.google.android.material.textview.MaterialTextView android:layout_width="wrap_content"
+                                                                       android:layout_height="wrap_content"
+                                                                       android:paddingVertical="2dp"
+                                                                       android:textColor="@color/black"
+                                                                       android:text="cat"
+                                                                       android:textStyle="bold"
+                                                                       android:textSize="13dp"
+                />
+            </LinearLayout>
         </LinearLayout>
         <TextView android:layout_width="wrap_content"
                   android:id="@+id/detail_description"
