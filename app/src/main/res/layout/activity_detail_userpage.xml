@@ -17,9 +17,9 @@
         />
 
     <TextView
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Username"
+        android:text="Let's get started!"
         android:textSize="40dp"
         android:textStyle="bold"
         android:gravity="center"
@@ -37,11 +37,11 @@
         android:layout_gravity="center"
         android:paddingLeft="40dp"
         android:paddingRight="30dp"
-        android:fontFamily="@font/dmsans_regular"
+        android:fontFamily="@font/dmsans_bold"
         android:letterSpacing="0.03"
         android:drawableRight="@drawable/icon_profile"
         android:hint="Username"
-        android:textColorHint="#3b3a39"
+        android:textColorHint="#30000000"
         android:background="@drawable/background_username_input"
         />
 
