@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="10dp"
         app:cardBackgroundColor="@color/white"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
@@ -12,21 +12,52 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:gravity="center"
-            android:padding="20dp"
+            android:padding="15dp"
     >
-        <ImageView
+        <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
-                android:src="@drawable/british_short_hair"
-        />
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+        >
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/cat_angora"
+            />
+        </androidx.cardview.widget.CardView>
         <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="test"/>
+                android:layout_marginVertical="10dp"
+                android:text="test"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_bold"
+        />
+        <TextView
+                android:id="@+id/card_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="The Turkish Angora is a breed of domestic cat. Turkish Angoras are one of the ancient, natural breeds of cat..."
+                android:textSize="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/dmsans_regular"
+        />
+        <TextView
+                android:id="@+id/card_more_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_link"
+                android:textSize="10dp"
+                android:textAlignment="textEnd"
+                android:textColor="@color/secondary"
+                android:fontFamily="@font/dmsans_regular"
+        />
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
