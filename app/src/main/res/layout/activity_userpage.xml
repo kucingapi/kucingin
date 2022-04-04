@@ -36,15 +36,14 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:paddingLeft="40dp"
-        android:paddingRight="30dp"
+        android:paddingHorizontal="30dp"
         android:fontFamily="@font/dmsans_bold"
         android:letterSpacing="0.03"
         android:drawableRight="@drawable/icon_profile"
         android:hint="Username"
         android:textColorHint="#30000000"
         android:background="@drawable/background_username_input"
-        />
+    />
 
     <RelativeLayout
         android:layout_width="match_parent"
