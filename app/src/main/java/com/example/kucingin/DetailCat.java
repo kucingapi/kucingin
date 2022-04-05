@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.appcompat.widget.AppCompatImageButton;
+import com.example.kucingin.Dataset.CardType;
 import com.example.kucingin.databinding.ActivityDetailCatBinding;
 import com.google.android.material.button.MaterialButton;
 
@@ -15,13 +16,21 @@ public class DetailCat extends AppCompatActivity {
     private MaterialButton moreInfo;
     private AppCompatImageButton backButton;
     private ImageView shareButton;
-    private Intent sendIntent, browserIntent, shareIntent, intent;
+    private Intent sendIntent, browserIntent, shareIntent, intent, smsIntent;
 
     private void createSendIntent(){
         sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, "British Short Hair");
         sendIntent.setType("text/plain");
+    }
+
+    private void sendSmsIntent(String title){
+        String number = "+62895328079912";  // The number on which you want to send SMS
+        smsIntent = new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null));
+        String message = "Hello i would like to purchase this food " + title;
+        smsIntent.putExtra("sms_body", message);
+        startActivity(smsIntent);
     }
 
     @Override
@@ -38,6 +47,23 @@ public class DetailCat extends AppCompatActivity {
         String title = intent.getStringExtra("title");
         String description = intent.getStringExtra("description");
         int image = intent.getIntExtra("image_id", 1);
+        CardType type = (CardType) intent.getSerializableExtra("type");
+
+        switch (type){
+            case CAT:
+                binding.catFood.setVisibility(View.GONE);
+                binding.messageCat.setVisibility(View.GONE);
+                break;
+            case FOOD:
+                binding.cat.setVisibility(View.GONE);
+                binding.messageCat.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sendSmsIntent(title);
+                    }
+                });
+                break;
+        }
 
         binding.detailImage.setImageResource(image);
         binding.detailTitle.setText(title);

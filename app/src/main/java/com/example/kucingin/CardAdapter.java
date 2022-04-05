@@ -9,12 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.kucingin.Dataset.CardType;
+import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.databinding.CardItemBinding;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
-    private CardType[] localDataSet;
+    private Card[] localDataSet;
 
     /**
      * Provide a reference to the type of views that you are using
@@ -38,7 +38,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
      * @param dataSet String[] containing the data to populate views to be used
      * by RecyclerView.
      */
-    public CardAdapter(CardType[] dataSet) {
+    public CardAdapter(Card[] dataSet) {
         localDataSet = dataSet;
     }
 
@@ -57,7 +57,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        CardType data = localDataSet[position];
+        Card data = localDataSet[position];
         ImageView cardImage = viewHolder.cardItemBinding.cardImage;
         TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
         TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
@@ -70,11 +70,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         cardMoreInfo.setOnClickListener(moreInfoListener(data, viewHolder.context));
     }
 
-    private View.OnClickListener moreInfoListener(CardType data, Context context){
+    private View.OnClickListener moreInfoListener(Card data, Context context){
         Intent intent = new Intent(context, DetailCat.class);
         intent.putExtra("title", data.title);
         intent.putExtra("description", data.description);
         intent.putExtra("image_id", data.imageId);
+        intent.putExtra("type", data.type);
+
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
