@@ -5,25 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.kucingin.CardAdapter;
-import com.example.kucingin.Dataset.CardType;
-import com.example.kucingin.Dataset.CatDataset;
+import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.Dataset.CatFoodDataSet;
-import com.example.kucingin.databinding.FragmentCatBinding;
 import com.example.kucingin.databinding.FragmentCatFoodBinding;
 
 public class CatFoodFragment extends Fragment {
 
     private FragmentCatFoodBinding binding;
     private RecyclerView popular;
-    private CardType[] dataset;
+    private Card[] dataset;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
