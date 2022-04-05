@@ -2,6 +2,7 @@ package com.example.kucingin;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.kucingin.databinding.ActivityUserpageBinding;
@@ -27,8 +28,14 @@ public class UserpageActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dashboard.putExtra("username", username.getText().toString());
-                startActivity(dashboard);
+                String usernameInput = username.getText().toString();
+                if(usernameInput.trim().length() == 0){
+                    Toast.makeText(UserpageActivity.this, "Please Insert Username", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    dashboard.putExtra("username", usernameInput);
+                    startActivity(dashboard);
+                }
             }
         });
     }
