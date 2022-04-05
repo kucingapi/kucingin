@@ -75,6 +75,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         intent.putExtra("title", data.title);
         intent.putExtra("description", data.description);
         intent.putExtra("image_id", data.imageId);
+        intent.putExtra("type", data.type);
+
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
