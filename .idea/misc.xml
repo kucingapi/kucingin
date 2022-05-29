@@ -23,11 +23,15 @@
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_dashboard.xml" value="0.1480978260869565" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_home.xml" value="0.1480978260869565" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/landing_page.xml" value="0.264" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/drawable/background_username_input.xml" value="0.178125" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_detail_cat.xml" value="0.22" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_detail_food.xml" value="0.1" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_splash_screen.xml" value="0.16197916666666667" />
-        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_cat.xml" value="0.22" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/activity_userpage.xml" value="0.22105263157894736" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/card_item.xml" value="0.1" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_cat.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_cat_food.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_dashboard.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/layout/fragment_home.xml" value="0.16197916666666667" />
         <entry key="..\:/Users/novel/IdeaProjects/kucingin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10740740740740741" />

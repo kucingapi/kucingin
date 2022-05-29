@@ -14,6 +14,8 @@ import com.example.kucingin.CardAdapter;
 import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.Dataset.CatFoodDataSet;
 import com.example.kucingin.databinding.FragmentCatFoodBinding;
+import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CatFoodFragment extends Fragment {
 
@@ -22,6 +24,7 @@ public class CatFoodFragment extends Fragment {
     private Card[] dataset;
     private Intent intent;
     private TextView username;
+    private MaterialButton logout;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,8 +33,13 @@ public class CatFoodFragment extends Fragment {
         View root = binding.getRoot();
         intent = getActivity().getIntent();
         username = binding.usernameTextview;
+        logout = binding.logout;
 
         username.setText(intent.getStringExtra("username"));
+
+        logout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+        });
 
         initDataset();
         CardAdapter customAdapter = new CardAdapter(dataset);

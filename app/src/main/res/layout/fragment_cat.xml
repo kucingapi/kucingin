@@ -33,6 +33,13 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/dmsans_regular"
         />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:backgroundTint="@color/design_default_color_error"
+            />
     </LinearLayout>
     <LinearLayout
             android:layout_marginTop="40dp"

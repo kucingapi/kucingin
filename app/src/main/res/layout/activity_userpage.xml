@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="400dp"
-        android:layout_height="350dp"
+        android:layout_height="300dp"
         android:src="@drawable/landing_page_cats"
         android:contentDescription="cat image"
         android:layout_gravity="center"
@@ -23,27 +23,47 @@
         android:textSize="40dp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:fontFamily="@font/dmsans_bold"
         />
 
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/username_input"
-        android:layout_marginTop="20dp"
+    <LinearLayout
         android:layout_width="320dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_gravity="center"
-        android:paddingHorizontal="30dp"
-        android:fontFamily="@font/dmsans_bold"
-        android:letterSpacing="0.03"
-        android:drawableRight="@drawable/icon_profile"
-        android:hint="Username"
-        android:textColorHint="#30000000"
-        android:background="@drawable/background_username_input"
-    />
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_input"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:letterSpacing="0.03"
+            android:drawableRight="@drawable/icon_profile"
+            android:hint="Email"
+            android:textColorHint="#30000000"
+            android:background="@drawable/background_username_input"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:fontFamily="@font/dmsans_bold"
+            android:letterSpacing="0.03"
+            android:drawableRight="@drawable/icon_lock"
+            android:hint="Password"
+            android:textColorHint="#30000000"
+            android:background="@drawable/background_username_input"
+            />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -51,15 +71,35 @@
         android:gravity="center_horizontal"
         >
 
-        <com.google.android.material.button.MaterialButton
-                android:id="@+id/button_login"
-                android:layout_width="320dp"
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_alignParentBottom="true"
+            >
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_register"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#2EC4B6"
+                android:fontFamily="@font/dmsans_bold"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:cornerRadius="25dp"
+                app:icon="@drawable/arrow_right"
+                app:iconGravity="end"
+                app:iconPadding="8dp"
+                app:iconSize="13dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_marginBottom="15dp"
                 android:backgroundTint="#2EC4B6"
                 android:fontFamily="@font/dmsans_bold"
-                android:paddingLeft="30dp"
                 android:text="Login"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -67,8 +107,8 @@
                 app:icon="@drawable/arrow_right"
                 app:iconGravity="end"
                 app:iconPadding="8dp"
-                app:iconSize="13dp"
-        />
+                app:iconSize="13dp" />
+        </LinearLayout>
 
     </RelativeLayout>
 
