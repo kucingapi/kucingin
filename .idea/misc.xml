@@ -4,20 +4,31 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable-xxhdpi/detail_cat_categories_description.xml" value="0.2035" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_add_cat_input.xml" value="0.189" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_get_started.xml" value="0.137" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_landing_page.xml" value="0.111" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/background_username_input.xml" value="0.1285" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/bottom_navbar_background.xml" value="0.2035" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/detail_cat_categories.xml" value="0.2035" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/detail_cat_description.xml" value="0.2035" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_cat_food.xml" value="0.2035" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_cheveron.xml" value="0.2035" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_message.xml" value="0.2035" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/ic_share.xml" value="0.1265" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/drawable/icon_back.xml" value="0.1235" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_add_cat.xml" value="0.44509232264334303" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_cat.xml" value="0.264" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_food.xml" value="0.264" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_medicine.xml" value="0.21354166666666666" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_detail_userpage.xml" value="0.176" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_main.xml" value="0.1480978260869565" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_splash_screen.xml" value="0.19583333333333333" />
+        <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/activity_userpage.xml" value="0.19583333333333333" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/card_item.xml" value="0.16302083333333334" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_cat.xml" value="0.16302083333333334" />
         <entry key="..\:/Android Studio Apps/kucingin/app/src/main/res/layout/fragment_cat_food.xml" value="0.16302083333333334" />
