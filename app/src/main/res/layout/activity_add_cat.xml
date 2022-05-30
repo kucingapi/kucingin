@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary_light"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+        android:id="@+id/header_container"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.appcompat.widget.AppCompatImageButton android:layout_width="wrap_content"
+            android:id="@+id/button_back"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_cheveron"
+            android:paddingHorizontal="1dp"
+            android:paddingVertical="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/icon_back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Cat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/main_add_cat"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/header_container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingTop="30dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <ImageButton
+            android:id="@+id/btn_add_cat"
+            android:layout_width="250dp"
+            android:layout_height="270dp"
+            android:background="@drawable/ic_add_cat"
+            />
+
+        <TextView
+            android:id="@+id/name_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/black"
+            android:paddingTop="15dp"
+            android:textSize="18dp"
+            android:text="Name"
+            android:layout_gravity="left"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_input"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/background_add_cat_input"
+            />
+
+        <TextView
+            android:id="@+id/fur_texture_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/black"
+            android:paddingTop="15dp"
+            android:textSize="18dp"
+            android:text="Fur Texture"
+            android:layout_gravity="left"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fur_texture_input"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/background_add_cat_input"
+            />
+
+        <TextView
+            android:id="@+id/colours_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/black"
+            android:paddingTop="15dp"
+            android:textSize="18dp"
+            android:text="Colours"
+            android:layout_gravity="left"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/colours_input"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/background_add_cat_input"
+            />
+
+        <TextView
+            android:id="@+id/hyperlink_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/black"
+            android:paddingTop="15dp"
+            android:textSize="18dp"
+            android:text="Hyperlink"
+            android:layout_gravity="left"
+            />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/care_instruction_input"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/background_add_cat_input"
+            />
+
+        <TextView
+            android:id="@+id/care_instruction_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dmsans_regular"
+            android:textColor="@color/black"
+            android:paddingTop="15dp"
+            android:textSize="18dp"
+            android:text="Care Instruction"
+            android:layout_gravity="left"
+            />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/hyperlink_input"
+            android:layout_width="350dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/background_add_cat_input"
+            />
+
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/detail_cat_description"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+        <com.google.android.material.button.MaterialButton android:layout_width="match_parent"
+            android:id="@+id/button_more_info"
+            android:backgroundTint="@color/secondary"
+            android:text="Add"
+            android:layout_height="60dp"
+            app:cornerRadius="15dp"
+            android:textSize="30dp"
+            android:textAllCaps="false"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
