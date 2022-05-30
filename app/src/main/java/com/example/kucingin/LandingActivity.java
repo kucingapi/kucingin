@@ -26,6 +26,5 @@ public class LandingActivity extends AppCompatActivity {
                 startActivity(login);
             }
         });
-
     }
 }
