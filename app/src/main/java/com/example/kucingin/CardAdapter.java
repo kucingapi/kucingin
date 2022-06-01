@@ -1,6 +1,7 @@
 package com.example.kucingin;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -32,6 +33,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     }
 
+    public CardAdapter() {
+        this.localDataSet = new Card[0];
+    }
+
     /**
      * Initialize the dataset of the Adapter.
      *
@@ -51,6 +56,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
         return new ViewHolder(view);
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void setLocalDataSet(Card[] localDataSet){
+        this.localDataSet = localDataSet;
+        this.notifyDataSetChanged();
+    }
+
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
