@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/test"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -56,6 +57,7 @@
             android:layout_width="250dp"
             android:layout_height="270dp"
             android:background="@drawable/ic_add_cat"
+            android:scaleType="fitCenter"
             />
 
         <TextView
@@ -78,66 +80,7 @@
             android:background="@drawable/background_add_cat_input"
             />
 
-        <TextView
-            android:id="@+id/fur_texture_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmsans_regular"
-            android:textColor="@color/black"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:text="Fur Texture"
-            android:layout_gravity="left"
-            />
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/fur_texture_input"
-            android:layout_width="350dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:paddingHorizontal="30dp"
-            android:background="@drawable/background_add_cat_input"
-            />
 
-        <TextView
-            android:id="@+id/colours_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmsans_regular"
-            android:textColor="@color/black"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:text="Colours"
-            android:layout_gravity="left"
-            />
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/colours_input"
-            android:layout_width="350dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:paddingHorizontal="30dp"
-            android:background="@drawable/background_add_cat_input"
-            />
-
-        <TextView
-            android:id="@+id/hyperlink_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/dmsans_regular"
-            android:textColor="@color/black"
-            android:paddingTop="15dp"
-            android:textSize="18dp"
-            android:text="Hyperlink"
-            android:layout_gravity="left"
-            />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/care_instruction_input"
-            android:layout_width="350dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:paddingHorizontal="30dp"
-            android:background="@drawable/background_add_cat_input"
-            />
 
         <TextView
             android:id="@+id/care_instruction_textview"

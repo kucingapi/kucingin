@@ -6,6 +6,9 @@ public class Card {
     public String description;
     public CardType type;
 
+    public Card() {
+    }
+
     public Card(int imageId, String title, String description, CardType type) {
         this.imageId = imageId;
         this.title = title;

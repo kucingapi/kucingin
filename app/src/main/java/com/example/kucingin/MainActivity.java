@@ -3,6 +3,7 @@ package com.example.kucingin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.kucingin.databinding.ActivityMainBinding;
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
 private ActivityMainBinding binding;
     private Intent intent;
@@ -26,7 +27,7 @@ private ActivityMainBinding binding;
     private RecyclerView popular;
     private Card[] dataset;
     private TextView usernameTextView;
-    private MaterialButton logout;
+    private MaterialButton logout, addData;
     private CardAdapter cardAdapter;
     private CatFoodDataSet foodDataset ;
     private CatDataset catDataset;
@@ -39,6 +40,12 @@ private ActivityMainBinding binding;
         setContentView(binding.getRoot());
         usernameTextView = binding.usernameTextview;
         logout = binding.logout;
+        addData = binding.addData;
+
+        addData.setOnClickListener(v->{
+            Intent intent = new Intent(MainActivity.this, AddCatActivity.class);
+            startActivity(intent);
+        });
 
         usernameTextView.setText(intent.getStringExtra("username"));
         cardAdapter = new CardAdapter();
