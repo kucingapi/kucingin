@@ -3,7 +3,6 @@ package com.example.kucingin;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
@@ -12,13 +11,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.Dataset.CardType;
-import com.example.kucingin.Dataset.CardUri;
 import com.example.kucingin.databinding.ActivityAddCatBinding;
-import com.example.kucingin.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
@@ -120,8 +116,8 @@ public class AddCatActivity extends AppCompatActivity {
     }
 
     public void addToFirebase() {
-        Card card = new CardUri(imageUri, Objects.requireNonNull(name.getText()).toString(),
-                Objects.requireNonNull(careIntruction.getText()).toString(), CardType.CAT);
+        Card card = new Card(Objects.requireNonNull(name.getText()).toString(),
+                Objects.requireNonNull(careIntruction.getText()).toString(), CardType.MEDICINE, imageUri);
         db.collection("medicine")
                 .add(card)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

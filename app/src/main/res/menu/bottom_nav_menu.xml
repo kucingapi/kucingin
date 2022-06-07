@@ -11,4 +11,9 @@
         android:icon="@drawable/ic_cat_food"
         android:title="@string/cat_food"/>
 
+    <item
+        android:id="@+id/navigation_medicine"
+        android:icon="@drawable/ic_medicine"
+        android:title="@string/medicine"/>
+
 </menu>

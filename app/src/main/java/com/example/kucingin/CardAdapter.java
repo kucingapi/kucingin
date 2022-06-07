@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.databinding.CardItemBinding;
 
@@ -74,9 +76,19 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
         TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
         TextView cardMoreInfo = viewHolder.cardItemBinding.cardMoreInfo;
+        if(data.imageUri != null)
+            Glide.with(viewHolder.context)
+                    .load(data.imageUri)
+                    .centerCrop()
+                    .placeholder(R.drawable.cat_angora)
+                    .into(cardImage);
+        else {
+            cardImage.setImageResource(data.imageId);
+        }
 
-        String description = data.description.substring(0, 100) + "...";
-        cardImage.setImageResource(data.imageId);
+        String description = data.description.length() <= 100 ?
+                data.description :
+                data.description.substring(0, 100) + "...";
         cardTitle.setText(data.title);
         cardDescription.setText(description);
         cardMoreInfo.setOnClickListener(moreInfoListener(data, viewHolder.context));

@@ -1,8 +1,18 @@
 package com.example.kucingin.Dataset;
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+
 import com.example.kucingin.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class CatFoodDataSet {
+    private FirebaseFirestore db;
     private Card[] foods;
     public CatFoodDataSet() {
         foods = new Card[]{
