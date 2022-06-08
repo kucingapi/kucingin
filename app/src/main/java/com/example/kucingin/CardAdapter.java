@@ -4,6 +4,7 @@ package com.example.kucingin;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,12 +77,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
         TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
         TextView cardMoreInfo = viewHolder.cardItemBinding.cardMoreInfo;
-        if(data.imageUri != null)
+        if(data.imageUri != null) {
             Glide.with(viewHolder.context)
                     .load(data.imageUri)
                     .centerCrop()
                     .placeholder(R.drawable.cat_angora)
                     .into(cardImage);
+        }
         else {
             cardImage.setImageResource(data.imageId);
         }
@@ -100,6 +102,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         intent.putExtra("description", data.description);
         intent.putExtra("image_id", data.imageId);
         intent.putExtra("type", data.type);
+        intent.putExtra("id", data.id);
+        intent.putExtra("image_uri", String.valueOf(data.imageUri));
 
         return new View.OnClickListener() {
             @Override

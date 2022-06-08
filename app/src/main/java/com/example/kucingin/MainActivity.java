@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kucingin.databinding.ActivityMainBinding;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -54,6 +55,12 @@ private ActivityMainBinding binding;
 
         addData.setOnClickListener(v->{
             Intent intent = new Intent(MainActivity.this, AddCatActivity.class);
+            startActivity(intent);
+        });
+
+        logout.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(MainActivity.this, LandingActivity.class);
             startActivity(intent);
         });
 
@@ -130,7 +137,7 @@ private ActivityMainBinding binding;
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        String savedUsername = savedInstanceState.getString("username").toString();
+        String savedUsername = savedInstanceState.getString("username");
         intent.putExtra("username",savedUsername);
     }
 }

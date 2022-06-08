@@ -61,6 +61,7 @@
             android:drawableRight="@drawable/icon_lock"
             android:hint="Password"
             android:textColorHint="#30000000"
+            android:inputType="textPassword"
             android:background="@drawable/background_username_input"
             />
     </LinearLayout>
