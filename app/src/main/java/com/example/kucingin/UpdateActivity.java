@@ -194,7 +194,7 @@ public class UpdateActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        progressDialog.setMessage("Added to Firebase");
+                        progressDialog.setMessage("Data Deleted");
                         progressDialog.setProgress(100);
                         progressDialog.dismiss();
                         Toast.makeText(UpdateActivity.this,"Data Successfully Deleted",Toast.LENGTH_SHORT).show();
