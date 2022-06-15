@@ -1,5 +1,10 @@
 package com.example.kucingin;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,14 +13,10 @@ import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageButton;
-
+import com.bumptech.glide.Glide;
 import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.Dataset.CardType;
-import com.example.kucingin.databinding.ActivityAddCatBinding;
+import com.example.kucingin.databinding.ActivityUpdateBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
@@ -31,38 +32,47 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
 
-public class AddCatActivity extends AppCompatActivity {
-    private ActivityAddCatBinding binding;
+public class UpdateActivity extends AppCompatActivity {
+    private ActivityUpdateBinding binding;
     private Intent intent;
-    private ImageButton btnAdd;
+    private ImageButton btnEdit;
     private TextInputEditText name, careIntruction;
-    private MaterialButton add;
+    private MaterialButton update, delete;
     private FirebaseFirestore db;
     private Uri imageUri;
     private StorageReference storageReference;
     private AppState appState;
     private ProgressDialog progressDialog;
+    private String id, title, instruction;
     private AppCompatImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         intent = getIntent();
-        binding = ActivityAddCatBinding.inflate(getLayoutInflater());
+        binding = ActivityUpdateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         name = binding.usernameInput;
-        careIntruction = binding.usernameInput;
-        add = binding.buttonMoreInfo;
-        btnAdd = binding.btnAddCat;
+        careIntruction = binding.careInstructionInput;
+        update = binding.btnUpdate;
+        delete = binding.btnDelete;
+        btnEdit = binding.btnEditCat;
         backButton = binding.buttonBack;
         db = FirebaseFirestore.getInstance();
         appState = AppState.START;
-        progressDialog = new ProgressDialog(AddCatActivity.this);
+        progressDialog = new ProgressDialog(UpdateActivity.this);
 
-        btnAdd.setOnClickListener(v->{
+        getIntentData();
+        putDefaultValue();
+
+
+        delete.setOnClickListener(v -> {
+            deleteDocument();
+        });
+        btnEdit.setOnClickListener(v->{
             selectImage();
         });
-        add.setOnClickListener(v -> {
+        update.setOnClickListener(v -> {
             addData();
         });
         backButton.setOnClickListener( v -> {
@@ -70,15 +80,47 @@ public class AddCatActivity extends AppCompatActivity {
         });
     }
 
+    private void getIntentData(){
+        id = intent.getStringExtra("id");
+        title = intent.getStringExtra("title");
+        instruction = intent.getStringExtra("description");
+        String imageUri = intent.getStringExtra("image_uri");
+        Log.d("instruction", "getIntentData: " + instruction);
+        this.imageUri = Uri.parse(imageUri);
+    }
+
+    private void putDefaultValue() {
+        name.setText(title);
+        careIntruction.setText(instruction);
+        Glide.with(UpdateActivity.this)
+                .load(this.imageUri)
+                .centerCrop()
+                .placeholder(R.drawable.cat_angora)
+                .into(btnEdit);
+    }
+
     public void addData() {
-        progressDialog.setMessage("Uploading Image");
-        progressDialog.setProgress(0);
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        progressDialog.show();
         int lengthInstruction = careIntruction.getText().toString().trim().length();
         int lengthName = name.getText().toString().trim().length();
-        if(lengthInstruction >= 0 && lengthName >= 0 && appState.equals(AppState.UPLOAD_IMAGE)) {
-            uploadImage();
+        if(lengthInstruction >= 0 && lengthName >= 0) {
+            if(appState.equals(AppState.UPLOAD_IMAGE)){
+                progressDialog.setMessage("Uploading Image");
+                progressDialog.setProgress(0);
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.show();
+                uploadImage();
+            }
+            else{
+                progressDialog.setMessage("Adding To Firebase");
+
+                progressDialog.setProgress(0);
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                progressDialog.show();
+                addToFirebase();
+            }
+        }
+        else{
+            return;
         }
     }
 
@@ -100,7 +142,7 @@ public class AddCatActivity extends AppCompatActivity {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.d("storage failed", e.toString());
-                Toast.makeText(AddCatActivity.this,"Failed to Upload",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateActivity.this,"Failed to Upload",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -125,14 +167,15 @@ public class AddCatActivity extends AppCompatActivity {
         Card card = new Card(Objects.requireNonNull(name.getText()).toString(),
                 Objects.requireNonNull(careIntruction.getText()).toString(), CardType.MEDICINE, imageUri);
         db.collection("medicine")
-                .add(card)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .document(id)
+                .set(card)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
+                    public void onSuccess(Void aVoid) {
                         progressDialog.setMessage("Added to Firebase");
                         progressDialog.setProgress(100);
                         progressDialog.dismiss();
-                        Toast.makeText(AddCatActivity.this,"Data Successfully Uploaded",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateActivity.this,"Data Successfully Edited",Toast.LENGTH_SHORT).show();
                         finish();
                     }
                 })
@@ -142,6 +185,29 @@ public class AddCatActivity extends AppCompatActivity {
                         Log.w("error adddata", "Error adding document", e);
                     }
                 });
+    }
+
+    private void deleteDocument(){
+        db.collection("medicine")
+                .document(id)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        progressDialog.setMessage("Data Deleted");
+                        progressDialog.setProgress(100);
+                        progressDialog.dismiss();
+                        Toast.makeText(UpdateActivity.this,"Data Successfully Deleted",Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("error adddata", "Error adding document", e);
+                    }
+                });
+
     }
 
 
@@ -159,13 +225,11 @@ public class AddCatActivity extends AppCompatActivity {
 
         if (requestCode == 100 && data != null && data.getData() != null){
             imageUri = data.getData();
-            btnAdd.setImageURI(imageUri);
-            btnAdd.setBackgroundResource(0);
-            btnAdd.setOnClickListener(v->{
+            btnEdit.setImageURI(imageUri);
+            btnEdit.setBackgroundResource(0);
+            btnEdit.setOnClickListener(v->{
             });
             appState = AppState.UPLOAD_IMAGE;
         }
     }
-
 }
-

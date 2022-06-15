@@ -1,14 +1,18 @@
 package com.example.kucingin;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 import com.example.kucingin.Dataset.Card;
 import com.example.kucingin.databinding.CardItemBinding;
 
@@ -32,6 +36,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     }
 
+    public CardAdapter() {
+        this.localDataSet = new Card[0];
+    }
+
     /**
      * Initialize the dataset of the Adapter.
      *
@@ -52,6 +60,13 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return new ViewHolder(view);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    public void setLocalDataSet(Card[] localDataSet){
+        this.localDataSet = localDataSet;
+        this.notifyDataSetChanged();
+    }
+
+
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
@@ -62,9 +77,20 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         TextView cardTitle = viewHolder.cardItemBinding.cardTitle;
         TextView cardDescription = viewHolder.cardItemBinding.cardDescription;
         TextView cardMoreInfo = viewHolder.cardItemBinding.cardMoreInfo;
+        if(data.imageUri != null) {
+            Glide.with(viewHolder.context)
+                    .load(data.imageUri)
+                    .centerCrop()
+                    .placeholder(R.drawable.cat_angora)
+                    .into(cardImage);
+        }
+        else {
+            cardImage.setImageResource(data.imageId);
+        }
 
-        String description = data.description.substring(0, 100) + "...";
-        cardImage.setImageResource(data.imageId);
+        String description = data.description.length() <= 100 ?
+                data.description :
+                data.description.substring(0, 100) + "...";
         cardTitle.setText(data.title);
         cardDescription.setText(description);
         cardMoreInfo.setOnClickListener(moreInfoListener(data, viewHolder.context));
@@ -76,6 +102,8 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         intent.putExtra("description", data.description);
         intent.putExtra("image_id", data.imageId);
         intent.putExtra("type", data.type);
+        intent.putExtra("id", data.id);
+        intent.putExtra("image_uri", String.valueOf(data.imageUri));
 
         return new View.OnClickListener() {
             @Override

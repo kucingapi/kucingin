@@ -27,7 +27,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add New Cat"
+            android:text="Update Cat"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -46,18 +46,39 @@
         app:layout_constraintTop_toBottomOf="@id/header_container"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="30dp"
+        android:paddingTop="10dp"
         android:orientation="vertical"
         android:gravity="center"
         >
 
-        <ImageButton
-            android:id="@+id/btn_add_cat"
-            android:layout_width="250dp"
-            android:layout_height="270dp"
-            android:background="@drawable/ic_add_cat"
-            android:scaleType="fitCenter"
-            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="260dp"
+            android:layout_height="230dp"
+            android:background="@drawable/background_update_cat_image"
+            >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_edit_cat"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_edit_cat"
+                android:layout_width="150dp"
+                android:layout_height="180dp"
+                android:background="@drawable/british_short_hair"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/name_textview"
@@ -70,16 +91,16 @@
             android:text="Name"
             android:layout_gravity="left"
             />
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username_input"
             android:layout_width="350dp"
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:paddingHorizontal="30dp"
-            android:background="@drawable/background_add_cat_input"
+            android:background="@drawable/background_update_cat"
+            android:drawableRight="@drawable/ic_edit_cat_small"
             />
-
-
 
         <TextView
             android:id="@+id/care_instruction_textview"
@@ -93,12 +114,13 @@
             android:layout_gravity="left"
             />
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/hyperlink_input"
+            android:id="@+id/care_instruction_input"
             android:layout_width="350dp"
-            android:layout_height="125dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:paddingHorizontal="30dp"
-            android:background="@drawable/background_add_cat_input"
+            android:background="@drawable/background_update_cat"
+            android:drawableRight="@drawable/ic_edit_cat_small"
             />
 
     </LinearLayout>
@@ -106,14 +128,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/detail_cat_description"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="20dp"
         >
 
         <com.google.android.material.button.MaterialButton android:layout_width="match_parent"
-            android:id="@+id/button_more_info"
+            android:layout_margin="5dp"
+            android:id="@+id/btn_update"
             android:backgroundTint="@color/secondary"
-            android:text="Add"
+            android:text="Update"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            app:cornerRadius="15dp"
+            android:textSize="30dp"
+            android:textAllCaps="false"
+            />
+        <com.google.android.material.button.MaterialButton android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:id="@+id/btn_delete"
+            android:backgroundTint="@color/design_default_color_error"
+            android:text="Delete"
+            android:layout_weight="1"
             android:layout_height="60dp"
             app:cornerRadius="15dp"
             android:textSize="30dp"
